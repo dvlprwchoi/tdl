@@ -12,18 +12,25 @@ function App() {
   ]);
   const newTodoInputValue = useRef();
 
-  // Handler functions
+  // Handler function
+  // Add Todo
   function _addTodo(e) {
     const newValue = newTodoInputValue.current.value;
     // console.log(newValue);
     // Not to add empty list
     if (newValue === '') return;
     setTodos((previousTodos) => {
-      return [...previousTodos, { id: 1, name: newValue, complete: false }];
+      return [...previousTodos, { name: newValue, complete: false }];
     });
     // Clear input after adding
     newTodoInputValue.current.value = null;
   }
+  // Handler function
+  // Clear Completed Todo
+  function _clearCompleted(e) {
+    console.log('clear');
+  }
+
   return (
     <>
       <div className="About">
@@ -35,11 +42,13 @@ function App() {
         <div className="buttons">
           <button onClick={_addTodo}>Add Todo</button>
           <button>Delete Todo</button>
-          <button>Clear Completed Todo</button>
+          <button onClick={_clearCompleted}>Clear Completed Todo</button>
         </div>
         <div className="status">
           <div>Total Todo number: {todos.length}</div>
-          <div>0 Todo left</div>
+          <div>
+            {todos.filter((todo) => !todo.complete).length} Todo(s) left
+          </div>
         </div>
       </div>
       <div className="Footer">
