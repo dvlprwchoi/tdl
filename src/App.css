@@ -21,9 +21,10 @@
   color: white;
 }
 
-.About button {
+.About button,
+.buttons button {
   font-size: larger;
-  background-color: bisque;
+  background-color: tomato;
 }
 
 .portfolio-link {
