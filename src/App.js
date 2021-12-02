@@ -1,4 +1,5 @@
 import About from './components/About/About';
+import TodoList from './components/TodoList/TodoList';
 import Footer from './components/Footer/Footer';
 import logo from './logo.svg';
 import './App.css';
@@ -9,7 +10,8 @@ function App() {
       <div className="About">
         <About />
       </div>
-      <div className="App">
+      <div className="TodoList">
+        <TodoList />
         <header className="App-header">
           <img src={logo} className="App-logo" alt="logo" />
           <p>
