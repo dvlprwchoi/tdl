@@ -1,16 +1,23 @@
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import About from './components/About/About';
 import TodoList from './components/TodoList/TodoList';
 import Footer from './components/Footer/Footer';
 import './App.css';
 
+const LOCAL_STORAGE_KEY = 'todoApp.todos';
+
 function App() {
-  const [todos, setTodos] = useState([
-    // { id: 1, name: 'Todo 1', complete: false },
-    // { id: 2, name: 'Todo 2', complete: false },
-    // { id: 3, name: 'Todo 3', complete: true },
-  ]);
+  const [todos, setTodos] = useState([]);
   const newTodoInputValue = useRef();
+
+  useEffect(() => {
+    const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
+    if (storedTodos) setTodos(storedTodos);
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
+  }, [todos]);
 
   // Handler function
   // Add Todo
@@ -28,7 +35,14 @@ function App() {
   // Handler function
   // Clear Completed Todo
   function _clearCompleted(e) {
-    console.log('clear');
+    // console.log('clear');
+    const newTodos = todos.filter((todo) => !todo.complete);
+    setTodos(newTodos);
+  }
+  // Handler function
+  // Delete Todo
+  function _deleteTodo(e) {
+    console.log('delete');
   }
 
   return (
@@ -41,7 +55,7 @@ function App() {
         <input className="input" type="text" ref={newTodoInputValue}></input>
         <div className="buttons">
           <button onClick={_addTodo}>Add Todo</button>
-          <button>Delete Todo</button>
+          <button onClick={_deleteTodo}>Delete Todo</button>
           <button onClick={_clearCompleted}>Clear Completed Todo</button>
         </div>
         <div className="status">
