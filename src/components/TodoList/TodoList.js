@@ -5,7 +5,9 @@ function TodoList({ todos, toggleCheckbox }) {
     <div>
       <h1>Todo List</h1>
       {todos.map((todo) => {
-        return <Todo toggleCheckbox={toggleCheckbox} todo={todo} />;
+        return (
+          <Todo key={todo.id} toggleCheckbox={toggleCheckbox} todo={todo} />
+        );
       })}
     </div>
   );
