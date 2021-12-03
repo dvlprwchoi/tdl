@@ -10,6 +10,7 @@ function App() {
   const [todos, setTodos] = useState([]);
   const newTodoInputValue = useRef();
 
+  // Local storage
   useEffect(() => {
     const storedTodos = JSON.parse(localStorage.getItem(LOCAL_STORAGE_KEY));
     if (storedTodos) setTodos(storedTodos);
@@ -19,15 +20,25 @@ function App() {
     localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(todos));
   }, [todos]);
 
+  // Checkbox toggle function
+  function toggleCheckbox(id) {
+    const newTodos = [...todos];
+    const todo = newTodos.find((todo) => todo.id === id);
+    todo.complete = !todo.complete;
+    setTodos(newTodos);
+  }
+
   // Handler function
   // Add Todo
   function _addTodo(e) {
     const newValue = newTodoInputValue.current.value;
+    const index = Date.now().toString();
+    // console.log(index);
     // console.log(newValue);
     // Not to add empty list
     if (newValue === '') return;
     setTodos((previousTodos) => {
-      return [...previousTodos, { name: newValue, complete: false }];
+      return [...previousTodos, { id: index, name: newValue, complete: false }];
     });
     // Clear input after adding
     newTodoInputValue.current.value = null;
@@ -51,7 +62,7 @@ function App() {
         <About />
       </div>
       <div className="TodoList">
-        <TodoList todos={todos} />
+        <TodoList todos={todos} toggleCheckbox={toggleCheckbox} />
         <input className="input" type="text" ref={newTodoInputValue}></input>
         <div className="buttons">
           <button onClick={_addTodo}>Add Todo</button>
