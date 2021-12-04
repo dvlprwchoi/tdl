@@ -22,6 +22,14 @@
   color: white;
 }
 
+.about-closed {
+  display: none;
+}
+
+.about-opened {
+  display: '';
+}
+
 .pane {
   background-color: cadetblue;
   min-width: 40%;
