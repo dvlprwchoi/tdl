@@ -17,13 +17,10 @@ function About() {
       <p id="aboutSection" className="about-closed">
         <h2>How to use Todo List App?</h2>
         <ol>
-          <li>
-            Type any word(s) in a white box and click
-            {' ' + '<Add Todo>'} button.
-          </li>
+          <li>Type any word(s) in a white box and click 'Add Todo' button.</li>
           <li>
             Once your Todos are listed, you can delete each single Todo by
-            clicking {' ' + '<Delete>'} button.
+            clicking 'Delete' button.
           </li>
           <li>
             When you are done with your Todo(s), you can mark it by using each
@@ -31,8 +28,8 @@ function About() {
           </li>
           <li>
             If you want to clear out completed Todo(s), you can simply click
-            {' ' + '<Clear Completed Todo>'} button. Then it will clear out
-            Todo(s) that you have marked it as done.
+            'Clear Completed Todo' button. Then it will clear out Todo(s) that
+            you have marked it as done.
           </li>
         </ol>
       </p>
