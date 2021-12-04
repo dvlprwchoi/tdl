@@ -2,7 +2,7 @@ import Todo from '../Todo/Todo';
 
 function TodoList({ todos, toggleCheckbox, deleteTodo2 }) {
   return (
-    <div>
+    <div className="pane">
       <h1>Todo List</h1>
       {todos.map((todo) => {
         return (

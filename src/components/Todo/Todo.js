@@ -17,6 +17,7 @@ function Todo({ todo, toggleCheckbox, deleteTodo3 }) {
     <div className="singleTodo">
       <label>
         <input
+          className="checkboxButton"
           type="checkbox"
           checked={todo.complete}
           onChange={_checkboxClick}
