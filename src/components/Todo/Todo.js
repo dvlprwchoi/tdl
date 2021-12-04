@@ -1,12 +1,18 @@
-function Todo({ todo, toggleCheckbox }) {
+function Todo({ todo, toggleCheckbox, deleteTodo3 }) {
   // Handle function
   // Checkbox click
   function _checkboxClick() {
     // console.log('Checkbox is clicked');
     toggleCheckbox(todo.id);
   }
+  // Delete Todo
+  function _deleteButtonClick() {
+    // console.log('delete button clicked');
+    deleteTodo3(todo.id);
+  }
+
   return (
-    <div>
+    <div className="singleTodo">
       <label>
         <input
           type="checkbox"
@@ -14,6 +20,9 @@ function Todo({ todo, toggleCheckbox }) {
           onChange={_checkboxClick}
         />
         {todo.name}
+        <button className="deleteTodoButton" onClick={_deleteButtonClick}>
+          Delete
+        </button>
       </label>
     </div>
   );

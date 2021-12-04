@@ -27,6 +27,12 @@
   background-color: tomato;
 }
 
+.deleteTodoButton {
+  font-size: medium;
+  color: bisque;
+  background-color: tomato;
+}
+
 .portfolio-link {
   color: #61dafb;
 }

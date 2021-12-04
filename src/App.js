@@ -50,10 +50,11 @@ function App() {
     const newTodos = todos.filter((todo) => !todo.complete);
     setTodos(newTodos);
   }
+
   // Handler function
-  // Delete Todo
-  function _deleteTodo(e) {
-    console.log('delete');
+  // Delete Single Todo
+  function _deleteTodo1() {
+    console.log('_deleteTodo');
   }
 
   return (
@@ -62,11 +63,14 @@ function App() {
         <About />
       </div>
       <div className="TodoList">
-        <TodoList todos={todos} toggleCheckbox={toggleCheckbox} />
+        <TodoList
+          todos={todos}
+          toggleCheckbox={toggleCheckbox}
+          deleteTodo2={_deleteTodo1}
+        />
         <input className="input" type="text" ref={newTodoInputValue}></input>
         <div className="buttons">
           <button onClick={_addTodo}>Add Todo</button>
-          <button onClick={_deleteTodo}>Delete Todo</button>
           <button onClick={_clearCompleted}>Clear Completed Todo</button>
         </div>
         <div className="status">
