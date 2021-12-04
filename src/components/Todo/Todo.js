@@ -9,6 +9,8 @@ function Todo({ todo, toggleCheckbox, deleteTodo3 }) {
   function _deleteButtonClick() {
     // console.log('delete button clicked');
     deleteTodo3(todo.id);
+    // const deletingId = todo.id;
+    // console.log(deletingId);
   }
 
   return (

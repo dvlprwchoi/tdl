@@ -48,13 +48,18 @@ function App() {
   function _clearCompleted(e) {
     // console.log('clear');
     const newTodos = todos.filter((todo) => !todo.complete);
+    // console.log(newTodos);
     setTodos(newTodos);
   }
 
   // Handler function
   // Delete Single Todo
-  function _deleteTodo1() {
-    console.log('_deleteTodo');
+  function _deleteTodo1(e) {
+    // console.log('_deleteTodo');
+    // console.log(e);
+    const newTodosAfterDeleted = todos.filter((todo) => todo.id !== e);
+    // console.log(newTodosAfterDeleted);
+    setTodos(newTodosAfterDeleted);
   }
 
   return (
