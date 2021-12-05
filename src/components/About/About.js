@@ -14,7 +14,7 @@ function About() {
   return (
     <div>
       <button onClick={toggleAbout}>About</button>
-      <p id="aboutSection" className="about-closed">
+      <div id="aboutSection" className="about-closed">
         <h2>How to use Todo List App?</h2>
         <ol>
           <li>Type any word(s) in a white box and click 'Add Todo' button.</li>
@@ -32,7 +32,7 @@ function About() {
             you have marked it as done.
           </li>
         </ol>
-      </p>
+      </div>
     </div>
   );
 }
