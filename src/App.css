@@ -3,7 +3,7 @@
 } */
 
 .main {
-  margin: 2rem;
+  margin: 0.5rem;
   /* border: 5px solid red; */
   min-width: 300px;
 }
@@ -16,10 +16,19 @@
 }
 
 .About,
+.Footer {
+  min-height: 7vh;
+}
+
+.TodoList {
+  min-height: 10vh;
+}
+
+.About,
 .TodoList,
 .Footer {
   background-color: #282c34;
-  min-height: 10vh;
+  /* min-height: 10vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -36,9 +45,14 @@
   display: '';
 }
 
+#aboutSection {
+  text-align: start;
+  padding: 0.5rem;
+}
+
 .aboutComponents {
   padding: 1rem;
-  background-color: rgb(210, 180, 140, 0.7);
+  /* background-color: rgb(210, 180, 140, 0.7); */
   max-width: 75%;
 }
 
