@@ -64,29 +64,40 @@ function App() {
 
   return (
     <>
-      <div className="About">
-        <About />
-      </div>
-      <div className="TodoList">
-        <TodoList
-          todos={todos}
-          toggleCheckbox={toggleCheckbox}
-          deleteTodo2={_deleteTodo1}
-        />
-        <input className="input" type="text" ref={newTodoInputValue}></input>
-        <div className="buttons">
-          <button onClick={_addTodo}>Add Todo</button>
-          <button onClick={_clearCompleted}>Clear Completed Todo</button>
+      <div className="main">
+        <div className="About">
+          <About />
         </div>
-        <div className="status">
-          <div>Total Todo number: {todos.length}</div>
-          <div>
-            {todos.filter((todo) => !todo.complete).length} Todo(s) left
+        <div className="TodoList">
+          <div className="todolistComponents">
+            <TodoList
+              todos={todos}
+              toggleCheckbox={toggleCheckbox}
+              deleteTodo2={_deleteTodo1}
+            />
+            <input
+              className="input"
+              type="text"
+              placeholder="Type your Todo here"
+              ref={newTodoInputValue}
+              autoFocus
+              // maxLength="30"
+            ></input>
+            <div className="buttons">
+              <button onClick={_addTodo}>Add Todo</button>
+              <button onClick={_clearCompleted}>Clear Completed Todo</button>
+            </div>
+            <div className="status">
+              <div>Total Todo number: {todos.length}</div>
+              <div>
+                {todos.filter((todo) => !todo.complete).length} Todo(s) left
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-      <div className="Footer">
-        <Footer />
+        <div className="Footer">
+          <Footer />
+        </div>
       </div>
     </>
   );
