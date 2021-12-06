@@ -22,7 +22,7 @@ function Todo({ todo, toggleCheckbox, deleteTodo3 }) {
           checked={todo.complete}
           onChange={_checkboxClick}
         />
-        {todo.name}
+        <p>{todo.name}</p>
         <button className="deleteTodoButton" onClick={_deleteButtonClick}>
           Delete
         </button>

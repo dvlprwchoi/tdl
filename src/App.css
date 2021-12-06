@@ -36,10 +36,22 @@
   display: '';
 }
 
+.aboutComponents {
+  padding: 1rem;
+  background-color: rgb(210, 180, 140, 0.7);
+  max-width: 75%;
+}
+
 .todolistComponents {
   /* border: 5px solid red; */
   padding: 1rem;
   background-color: rgb(210, 180, 140, 0.7);
+  max-width: 90%;
+}
+
+.singleTodo p {
+  word-wrap: break-word;
+  width: 70%;
 }
 
 .pane {

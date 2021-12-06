@@ -12,7 +12,7 @@ function About() {
     }
   }
   return (
-    <div>
+    <div className="aboutComponents">
       <button onClick={toggleAbout}>About</button>
       <div id="aboutSection" className="about-closed">
         <h2>How to use Todo List App?</h2>
