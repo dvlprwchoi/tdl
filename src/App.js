@@ -81,6 +81,7 @@ function App() {
               placeholder="Type your Todo here"
               ref={newTodoInputValue}
               autoFocus
+              // maxLength="30"
             ></input>
             <div className="buttons">
               <button onClick={_addTodo}>Add Todo</button>
