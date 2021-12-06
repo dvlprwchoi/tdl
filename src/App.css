@@ -49,11 +49,6 @@
   max-width: 90%;
 }
 
-.singleTodo p {
-  word-wrap: break-word;
-  width: 70%;
-}
-
 .pane {
   background-color: cadetblue;
   min-width: 40%;
@@ -80,13 +75,21 @@
 }
 
 .singleTodo {
-  padding: 1rem;
+  padding: 0.1rem;
 }
+
 .singleTodo label {
   padding: 1%;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.singleTodo p {
+  word-wrap: break-word;
+  width: 70%;
+  text-align: start;
+  margin-left: 1rem;
 }
 
 .checkboxButton {
